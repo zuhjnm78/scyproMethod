@@ -26,19 +26,25 @@ public class Main {
             }
         }
     }
-    public static void diliveryDistance ( int diliveryDistance){
-if (diliveryDistance <= 20){
-        System.out.println("Потребуется дней:  1 день.");
+
+    public static int deliveryDays(int deliveryDistance) {
+        int deliveryDays;
+        if (deliveryDistance <= 20) {
+            deliveryDays = 1;
+        } else if (deliveryDistance <= 60) {
+            deliveryDays = 2;
+        } else if (deliveryDistance <= 100) {
+            deliveryDays = 3;
+        } else {
+            deliveryDays = 4;
+        }
+        if (deliveryDays < 4) {
+            System.out.println("Потребуется дней: " + deliveryDays);
+        } else {
+            System.out.println("Свыше 100 км доставки нет.");
+        }
+        return deliveryDays;
     }
-else if (diliveryDistance <=60){
-        System.out.println("Потребуется дней:  2 дня.");
-    }
-else if (diliveryDistance <= 100) {
-        System.out.println("Потребуется дней:  3 дня.");
-    }
-else
-        System.out.println("Свыше 100 км доставки нет.");
-}
 
 
     public static void main(String[] args) {
@@ -71,8 +77,9 @@ else
     public static void task3() {
 
         System.out.println("Задача 3");
-        int diliveryDistance = 120;
-        diliveryDistance(diliveryDistance);
-
+        int deliveryDistance = 95;
+        deliveryDays(deliveryDistance);
     }
+
 }
+
